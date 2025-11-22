@@ -1,0 +1,10 @@
+url       = "https://preprod.jpe3b.jaws.jio.com:13000"
+region    = "regionOne"
+domain    = "Default"
+user      = "cxpadmin"
+tenant    = "HCMP_DEV"
+password  = "cX#$yV9$nP1q"
+
+vmName      = "my_vm1"
+flavor      = "m1.small"
+networkName = "HCMPDevVnet"
