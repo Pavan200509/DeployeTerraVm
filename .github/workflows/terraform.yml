@@ -1,0 +1,37 @@
+name: Terraform VM Deployment
+
+on:
+  push:
+    branches:
+      - main   # or master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    env:
+      TF_VAR_URL: ${{ secrets.URL }}
+      TF_VAR_REGION: ${{ secrets.REGION }}
+      TF_VAR_DOMAIN: ${{ secrets.DOMAIN }}
+      TF_VAR_TENANT: ${{ secrets.TENANT }}
+      TF_VAR_USER: ${{ secrets.USER }}
+      TF_VAR_PASSWORD: ${{ secrets.PASSWORD }}
+
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v3
+
+    - name: Setup Terraform
+      uses: hashicorp/setup-terraform@v3
+
+    - name: Terraform Init
+      run: terraform init
+
+    - name: Terraform Validate
+      run: terraform validate
+
+    - name: Terraform Plan
+      run: terraform plan
+
+    - name: Terraform Apply
+      run: terraform apply -auto-approve
