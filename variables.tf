@@ -1,4 +1,4 @@
-variable "URL" {}
+variable "AUTH_URL" {}
 variable "REGION" {}
 variable "DOMAIN" {}
 variable "TENANT" {}
