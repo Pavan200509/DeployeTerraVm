@@ -1,9 +1,8 @@
 provider "openstack"{
-	auth_url    = var.url
-	region      = var.region
-	domain_name = var.domain
-	tenant_name = var.tenant
-	user_name   = var.user
-	password    = var.password
-
+	auth_url    = var.URL
+	region      = var.REGION
+	domain_name = var.DOMAIN
+	tenant_name = var.TENANT
+	user_name   = var.USER
+	password    = var.PASSWORD
 }
